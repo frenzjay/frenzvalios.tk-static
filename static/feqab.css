@@ -1,0 +1,103 @@
+ body {
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px margin:20px;
+    animation-duration: 1s;
+    animation-name: slideInFromTop;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+input[type="text"],
+input[type="submit"] {
+    font-size: 25px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.response {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100%;
+    z-index: 1;
+    animation: slide-in 0.5s ease-out forwards;
+}
+
+@keyframes slide-in {
+    100% {
+        bottom: 20px;
+    }
+}
+
+.response-text {
+    font-size: 28px;
+    white-space: pre-wrap;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+    max-height: 50vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.close {
+    color: grey; 
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.ta {
+    animation: typing 3s linear infinite;
+    white-space: pre-warp;
+    overflow: hidden;
+    animation-iteration-count: 1;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

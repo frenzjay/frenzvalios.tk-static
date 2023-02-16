@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Frenz's Epic AI">
+   <meta property="og:description" content="AI ni Frenz HAHAHA">
+   <meta property="og:type" content="website">
+   <meta content='https://frenzvalios.tk/static/images/frenz.png' property='og:image'/>
+  <meta content='https://frenzvalios.tk/static/images/frenz.png' name='twitter:image'/>
+  <meta name="theme-color" content="#1e2327">
+<meta name="color-scheme" content="light dark" />
+   <link rel="icon" href="https://frenzvalios.tk/static/images/frenz.png">
+    <title>Frenz Valios AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e6dcdc;
+      }
+      
+      .container {
+        max-width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+      
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+      
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: #f1f1f1;
+      }
+      
+      input[type=text]:focus {
+        outline: none;
+        border: 2px solid #4CAF50;
+      }
+      
+      input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+      }
+
+      pre {
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+        white-space: pre-wrap;
+      }
+      
+      a {
+        color: #4CAF50;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color: #45a049;
+      }
+.loading {
+  display: inline-block;
+  margin-left: 5px;
+  border-radius: 50%;
+  border: 5px solid black;
+  border-top-color: transparent;
+  width: 20px;
+  height: 20px;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+      footer {
+  position: fixed;
+  bottom: 0;
+  width: 80%;
+  text-align: center;
+  padding: 2px;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+}
+    </style>
+  </head>
+  <body class="container">
+    <h2>FEQAB - Frenz</h2>
+    <form method="post">
+      {% if question %}
+        <input type="text" name="question" placeholder="{{question}}"/>
+      {% else %}
+        <input type="text" name="question" placeholder="Your questions"/>
+      {% endif %}
+      <input type="submit" value="Ask" onclick="this.value='The Mighty AI is thinking...'; this.style.pointerEvents='none'; document.getElementById('loading').style.display='inline-block';"><br>
+<div class="loading" id="loading" style="display: none;"></div>
+    </form>
+    {% if answer %}
+      <pre>{{answer}}</pre>
+    {% endif %}
+    <footer>
+    Made by <a href="https://www.facebook.com/profile.php?id=100087995763221">Frenz Valios</a></footer>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place</title>
+    <style>
+        .image {
+            position: absolute;
+        }
+        h1 {
+        font-family: Arial, sans-serif;
+      }
+      p {
+        font-family: Georgia, serif;
+    </style>
+</head>
+<body>
+    <p>Welcome to Place! Here you can view all the amazing images that have been uploaded by users from around the world. If you'd like to upload your own image, just click on the link below:</p>
+  <p><a href="{{ url_for('upload') }}">Upload an image to Place</a></p>
+    {% for image in images %}
+        <div class="image" style="top: {{ image['position'][1] }}px; left: {{ image['position'][0] }}px; transform: rotate({{ image['angle'] }}deg);">
+            <img src="{{ url_for('static', filename='images/' + image['filename']) }}" width="80">
+            <!--<p>{{ image['filename'] }}</p>-->
+        </div>
+    {% endfor %}
+</body>
+</html>
